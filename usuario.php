@@ -31,11 +31,12 @@
             background-color: #C1FCE8;
         }
         .nav{
-            text-align:left;
+            text-align:right;
             padding-left:10px;
         }
         a:link,a:visited,a:active {
             text-decoration:none;
+            color:blue;
         }
     </style>
     <nav class="nav">
@@ -44,7 +45,7 @@
     <?php
         session_start();
         $conn = new mysqli("localhost", "root", "", "taller");
-        $sql = "SELECT * FROM trabajadores WHERE Nombre != 'Hanjara';";
+        $sql = "SELECT * FROM trabajadores WHERE Nombre != 'Hancara';";
         $result = $conn -> query($sql);
     ?>
     <section class="form_wrap">
@@ -52,8 +53,10 @@
         <form action="nuevaCita.php" method="POST" class="form_contact">
             <h2>Pedir cita</h2>
             <div class="user_info">
-                <label for="Fecha">Fecha y hora:</label>
-                <input type="datetime-local" name="fecha" value="<?php if (isset($_SESSION['fecha'])) echo $_SESSION['fecha'];?>"><br/>
+                <label for="Fecha">Fecha</label>
+                <input type="date" name="fecha" placeholder="dd-mm-yyyy" value="<?php if (isset($_SESSION['fecha'])) echo $_SESSION['fecha'];?>"/>
+                <label for="Hora">Hora</label>
+                <input type="time" name="time" min="09:00" max="18:00" step="1800" value="<?php if (isset($_SESSION['time'])) echo $_SESSION['time'];?>"/>
                 <label for="Mecanico">Mecánico</label>
                 <select name="mecanico" id="mecanico">
                     <?php

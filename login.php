@@ -11,6 +11,7 @@
             }
             a:link, a:visited, a:active {
                 text-decoration:none;
+                color:blue;
             }
         </style>
         <link href="css/signin.css" rel="stylesheet">
@@ -37,7 +38,7 @@
             </main>
             <main class="form-signin w-100 m-auto">
                 <h1 class="h3 mb-3 fw-normal">Nuevo usuario</h1>
-                <form action="nuevousuario.php" method="POST">
+                <form action="nuevousuario.php" method="POST" enctype="multipart/form-data">
                     <div class="form-floating">
                         <div class="form-floating">
                             <label for="floatingInput">Nombre:</label>
@@ -49,7 +50,7 @@
                         </div>
                         <div class="form-floating">
                             <label for="floatingInput">Foto:</label>
-                            <input type="file" id="foto" class="form-control" name="foto" value="<?php if (isset($_SESSION['foto'])) echo $_SESSION['foto'];?>"></input>
+                            <input type="file" id="foto" class="form-control" name="fileToUpload" value="<?php if (isset($_SESSION['fileToUpload'])) echo $_SESSION['fileToUpload'];?>"></input>
                         </div>
                         <div class="form-floating">
                             <label for="floatingInput">Email:</label>
