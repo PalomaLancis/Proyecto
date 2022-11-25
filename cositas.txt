@@ -1,0 +1,10 @@
+Usuarios	Id, Nombre, Apellido, Foto, Email, Contraseña, Dirección
+Trabajadores	Id, Nombre, Apellido, Email, Foto, Especialidad
+Citas		Id, Idusuario, Idmecanico, Fecha, Estado, Comentarios
+
+Se podrá elegir un día y una hora, que se utilizará para comprobar disponibilidad.
+Crear una función que dado un profesional te diga la primera cita disponible.
+Establecer de alguna forma límites horarios o días festivos semanales.
+
+
+editar trabajador.
